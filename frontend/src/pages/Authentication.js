@@ -39,5 +39,9 @@ export async function action({ request }) {
         });
     }
 
+    const resData = await response.json();
+    const token = resData.token;
+    localStorage.setItem('token', token);
+
     return redirect('/');
 }
